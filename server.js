@@ -1,7 +1,5 @@
 'use strict';
-
 const app = require('./app');
-const connectMongoDB = require('./services/mongodb');
 require('dotenv').config();
 const port = process.env.PORT || 5000;
 

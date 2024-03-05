@@ -11,8 +11,23 @@ services:
       - backend_network
     container_name: nodejs__rabbitmq__container
 
+  # service: 2
+  redisDB:
+    image: redis:latest
+    restart: always
+    ports:
+      - '6379:6379'
+    networks:
+      - backend_network
+    volumes:
+      - type: volume
+        source: redis-data
+        target: /data
+    container_name: nodejs__redis__container
+
 volumes:
-  mongodb-data:
+  redis-data:
+
 
 networks:
   backend_network:
